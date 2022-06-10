@@ -29,6 +29,11 @@ body {
     grid-area: head;
 }
 
+.animate {
+    grid-area: animate;
+    display: flex;
+    flex-flow: column wrap;
+}
 .sectionServices{
     grid-area: services;
     justify-content: center;
@@ -195,6 +200,44 @@ footer div p {
     color: #F5F9F1;
 }
 
+.gradient{
+    width: 200px;
+    height: 200px;
+    background-image: linear-gradient(to left, #001c8b, #F6B28E );
+    margin: 20px;
+}
+
+.transition{
+    width: 200px;
+    height: 200px;
+    transition: height 3s;
+    background-color: #001C8B;
+    margin: 20px;
+}
+
+.transform {
+    width: 200px;
+    height: 200px;
+    background-color: #001C8B;
+    
+    animation-name: cube;
+    animation-duration: 3s;
+    animation-iteration-count: 3;
+}
+
+@keyframes cube {
+    from {
+        transform: translate(250px, 40px);
+    }
+
+    to {
+        transform: translate(0px, -10px);
+    }
+}
+
+.transition:hover {
+    height: 300px;
+}
 /* Desktop */
 
 @media (min-widdth: 1024px) {
@@ -204,6 +247,7 @@ footer div p {
         grid-template-areas: 
         "navigate"
         "head"
+        "animate"
         "services"
         "difference"
         "portfolio"
@@ -242,6 +286,7 @@ footer div p {
         grid-template-areas: 
         "navigate"
         "head"
+        "animate"
         "services"
         "difference"
         "portfolio"
@@ -273,6 +318,7 @@ footer div p {
         grid-template-areas: 
         "navigate"
         "head"
+        "animate"
         "services"
         "difference"
         "portfolio"
