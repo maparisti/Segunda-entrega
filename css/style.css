@@ -29,11 +29,6 @@ body {
     grid-area: head;
 }
 
-.animate {
-    grid-area: animate;
-    display: flex;
-    flex-flow: column wrap;
-}
 .sectionServices{
     grid-area: services;
     justify-content: center;
@@ -59,6 +54,16 @@ footer{
 
 /* Grids/ */
 
+.nav-link:hover{
+    background-color: #f6b28e72;
+    color: #001C8B !important;
+}
+
+.nav-link:active{
+    background-color: #001c8b9c;
+    color: #F6B28E !important;
+}
+
 h1{
     font-weight: 700;
     font-size: 70px;
@@ -74,23 +79,13 @@ h2 {
     padding: 20px;
 }
 
-.menu, footer{
+footer{
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
 }
 
 .logo {
-    padding: 10px;
-}
-
-.menu ul {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-}
-
-.menu ul li {
     padding: 10px;
 }
 
@@ -200,54 +195,15 @@ footer div p {
     color: #F5F9F1;
 }
 
-.gradient{
-    width: 200px;
-    height: 200px;
-    background-image: linear-gradient(to left, #001c8b, #F6B28E );
-    margin: 20px;
-}
-
-.transition{
-    width: 200px;
-    height: 200px;
-    transition: height 3s;
-    background-color: #001C8B;
-    margin: 20px;
-}
-
-.transform {
-    width: 200px;
-    height: 200px;
-    background-color: #001C8B;
-    
-    animation-name: cube;
-    animation-duration: 3s;
-    animation-iteration-count: 3;
-}
-
-@keyframes cube {
-    from {
-        transform: translate(250px, 40px);
-    }
-
-    to {
-        transform: translate(0px, -10px);
-    }
-}
-
-.transition:hover {
-    height: 300px;
-}
 /* Desktop */
 
 @media (min-widdth: 1024px) {
 
-    body {
+    .mainPage {
         display: grid;
         grid-template-areas: 
         "navigate"
         "head"
-        "animate"
         "services"
         "difference"
         "portfolio"
@@ -281,12 +237,11 @@ footer div p {
         padding: 10px;
     }
 
-    body {
+    .mainPage {
         display: grid;
         grid-template-areas: 
         "navigate"
         "head"
-        "animate"
         "services"
         "difference"
         "portfolio"
@@ -313,12 +268,11 @@ footer div p {
 
 @media (max-width: 511px) {
 
-    body {
+    .mainPage {
         display: grid;
         grid-template-areas: 
         "navigate"
         "head"
-        "animate"
         "services"
         "difference"
         "portfolio"
@@ -358,3 +312,69 @@ footer div p {
         max-width: 100%;
     }
 }
+
+/* About Section */
+
+.aboutSection {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    padding: 30px;
+    grid-area: main-about;
+}
+
+.aboutSection div {
+    max-width: 50%;
+}
+
+@media (min-width: 512px) and (max-width: 1023px) {
+
+    .aboutPage {
+        display: grid;
+        grid-template-areas:
+        "navigate"
+        "head"
+        "main-about"
+        "foot";
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+    }
+
+    .aboutSection div {
+        max-width: 100%;
+    }
+
+    .textAbout {
+        padding-bottom: 20px;
+    }
+ }
+
+
+ /* Phone */
+
+ @media (max-width: 511px) {
+
+    .aboutPage {
+        display: grid;
+        grid-template-areas:
+        "navigate"
+        "head"
+        "main-about"
+        "foot";
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+        }
+
+    .aboutSection {
+        padding: 5px;
+    }
+    .aboutSection div {
+        max-width: 100%;
+    }
+
+    .textAbout {
+        padding-bottom: 20px;
+    }
+
+}
+
